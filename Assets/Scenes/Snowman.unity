@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e549cbe3f14ab45d09d8849e208018e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_transform: {fileID: 0}
   cart: {fileID: 1578522565}
   gyroText: {fileID: 0}
 --- !u!20 &182405748
@@ -1167,7 +1168,7 @@ MonoBehaviour:
   m_Path: {fileID: 2061833779}
   m_UpdateMethod: 2
   m_PositionUnits: 1
-  m_Speed: 0
+  m_Speed: 3
   m_Position: 0
 --- !u!4 &1578522566
 Transform:

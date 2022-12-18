@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Gyro : MonoBehaviour
 {
-
+    [SerializeField]
     Transform m_transform;
 
     Quaternion currentGyro;
@@ -36,7 +36,7 @@ public class Gyro : MonoBehaviour
         if(gyroText != null)
         gyroText.text = $"enabled: {Input.gyro.enabled} attitude: {Input.gyro.attitude}";
 
-        //m_transform.localRotation = _BASE_ROTATION * (new Quaternion(-gyro.x, -gyro.y, gyro.z, gyro.w));
+        m_transform.localRotation = _BASE_ROTATION * (new Quaternion(-gyro.x, -gyro.y, gyro.z, gyro.w));
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -50,7 +50,8 @@ public class Gyro : MonoBehaviour
         string obj_name = other.gameObject.name;
         if (obj_name == "Teleporter1")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int num = SceneManager.sceneCount;
+            SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%num);
         }
     }
 
