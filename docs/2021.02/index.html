@@ -22,13 +22,13 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <!--<div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+      <div id="unity-footer">
+        <!--<div id="unity-webgl-logo"></div>
         <button id="entervr" value="Enter VR" disabled>VR</button>
         <button id="enterar" value="Enter AR" disabled>AR</button>
         <div id="unity-webxr-link">Using <a href="https://github.com/De-Panther/unity-webxr-export" target="_blank" title="WebXR Export">WebXR Export</a></div>
-        <div id="unity-build-title">VR</div>
-      </div>-->
+        <div id="unity-build-title">VR</div>-->
+      </div>
     </div>
     <script>
       var buildUrl = "Build";
@@ -84,12 +84,12 @@
         enterVRButton.disabled = !event.detail.supported;
       }, false);
 
-      /*enterARButton.addEventListener('click', function (event) {
+      enterARButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleAR();
       }, false);
       enterVRButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleVR();
-      }, false);*/
+      }, false);
       screen.orientation.lock('portrait-primary').then(
         // ロック成功時
         function() {
