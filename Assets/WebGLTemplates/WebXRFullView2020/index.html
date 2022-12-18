@@ -9,9 +9,7 @@
     <meta name="description" content="{{{ DESCRIPTION }}}">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script>  
-    
-    </script>
+
   </head>
   <body>
     <div id="unity-container">
@@ -101,6 +99,16 @@
       enterVRButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleVR();
       }, false);*/
+      screen.orientation.lock('portrait-primary').then(
+        // ロック成功時
+        function() {
+          console.log('ロックされました');
+        },
+        // ロック失敗時
+        function() {
+          console.log('ロックできませんでした');
+        }
+      );
     </script>
   </body>
 </html>
