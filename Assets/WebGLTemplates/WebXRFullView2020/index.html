@@ -16,13 +16,14 @@
       <div id="unity-canvas-container" style="width: 100%; height: 100%;">
         <canvas id="unity-canvas" style="width: 100%; height: 100%;"></canvas>
       </div>
+      <!--
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <!--<div id="unity-footer">
+      <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <button id="entervr" value="Enter VR" disabled>VR</button>
         <button id="enterar" value="Enter AR" disabled>AR</button>
@@ -93,20 +94,20 @@
         enterVRButton.disabled = !event.detail.supported;
       }, false);
 
-      /*enterARButton.addEventListener('click', function (event) {
+      enterARButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleAR();
       }, false);
       enterVRButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleVR();
-      }, false);*/
+      }, false);
       screen.orientation.lock('portrait-primary').then(
         // ロック成功時
         function() {
-          console.log('ロックされました');
+          //console.log('ロックされました');
         },
         // ロック失敗時
         function() {
-          console.log('ロックできませんでした');
+          //console.log('ロックできませんでした');
         }
       );
     </script>
