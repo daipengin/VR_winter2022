@@ -21,10 +21,10 @@ public class Gyro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cart = GameObject.Find("DollyCart").GetComponent<Cinemachine.CinemachineDollyCart>();
+        //cart = GameObject.Find("DollyCart").GetComponent<Cinemachine.CinemachineDollyCart>();
         Input.gyro.enabled = true;
         gyroText = GameObject.Find("GyroText").GetComponent<Text>();
-        m_transform = this.transform;
+        m_transform = transform;
         if (!cart) return;
         cart.m_Speed = CameraRayCast.railSpeed;
     }
@@ -33,10 +33,10 @@ public class Gyro : MonoBehaviour
     void Update()
     {
         Quaternion gyro = Input.gyro.attitude;
+        if(gyroText != null)
         gyroText.text = $"enabled: {Input.gyro.enabled} attitude: {Input.gyro.attitude}";
 
-        m_transform.localRotation =
-            _BASE_ROTATION * (new Quaternion(-gyro.x, -gyro.y, gyro.z, gyro.w));
+        //m_transform.localRotation = _BASE_ROTATION * (new Quaternion(-gyro.x, -gyro.y, gyro.z, gyro.w));
 
         if (Input.GetMouseButtonDown(1))
         {
