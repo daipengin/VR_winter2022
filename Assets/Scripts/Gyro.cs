@@ -11,7 +11,9 @@ public class Gyro : MonoBehaviour
 
     Quaternion currentGyro;
 
-    readonly Quaternion _BASE_ROTATION = Quaternion.Euler(90, 0, 0);
+    
+
+    readonly Quaternion _BASE_ROTATION = Quaternion.Euler(0, 0, 0);
 
     [SerializeField]
     Cinemachine.CinemachineDollyCart cart;
@@ -27,6 +29,7 @@ public class Gyro : MonoBehaviour
         m_transform = transform;
         if (!cart) return;
         cart.m_Speed = CameraRayCast.railSpeed;
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     // Update is called once per frame
