@@ -13,7 +13,7 @@ public class Gyro : MonoBehaviour
 
     
 
-    readonly Quaternion _BASE_ROTATION = Quaternion.Euler(0, 0, 0);
+    readonly Quaternion _BASE_ROTATION = Quaternion.Euler(0, 0, 90);
 
     [SerializeField]
     Cinemachine.CinemachineDollyCart cart;
@@ -25,7 +25,7 @@ public class Gyro : MonoBehaviour
     {
         //cart = GameObject.Find("DollyCart").GetComponent<Cinemachine.CinemachineDollyCart>();
         Input.gyro.enabled = true;
-        gyroText = GameObject.Find("GyroText").GetComponent<Text>();
+        //gyroText = GameObject.Find("GyroText").GetComponent<Text>();
         m_transform = transform;
         if (!cart) return;
         cart.m_Speed = CameraRayCast.railSpeed;
