@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         //DirectionMove();
-        ClickMove();
+        //ClickMove();
     }
     void DirectionMove()
     {
