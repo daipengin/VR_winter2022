@@ -82,7 +82,8 @@ public class CameraRayCast : MonoBehaviour
 
     void Loanch()
     {
-        int num = SceneManager.sceneCount;
+        int num = SceneManager.sceneCountInBuildSettings;
+        Debug.Log(num + ":" + (SceneManager.GetActiveScene().buildIndex + 1) % num);
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % num);
         //SceneManager.LoadScene("Snowman");
     }

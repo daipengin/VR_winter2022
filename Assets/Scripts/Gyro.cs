@@ -13,7 +13,7 @@ public class Gyro : MonoBehaviour
 
     
 
-    readonly Quaternion _BASE_ROTATION = Quaternion.Euler(0, 0, 90);
+    readonly Quaternion _BASE_ROTATION = Quaternion.Euler(90, 0, 90);
 
     [SerializeField]
     Cinemachine.CinemachineDollyCart cart;
@@ -53,7 +53,7 @@ public class Gyro : MonoBehaviour
         string obj_name = other.gameObject.name;
         if (obj_name == "Teleporter1")
         {
-            int num = SceneManager.sceneCount;
+            int num = SceneManager.sceneCountInBuildSettings;
             SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1)%num);
         }
     }
