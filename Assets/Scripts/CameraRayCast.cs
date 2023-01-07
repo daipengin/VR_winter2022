@@ -16,26 +16,26 @@ public class CameraRayCast : MonoBehaviour
     [SerializeField]
     Text currentSpeedText;
 
+
     [SerializeField]
-    RectTransform selectGauge;
+    Image selectber;
 
     Vector2 gaugeVec = new Vector2(50, 5);
 
-    public static float railSpeed = 50;
+    public static float railSpeed = 15 ;
 
     // Start is called before the first frame update
     void Start()
     {
-        //currentSpeedText = GameObject.Find("CurrentSpeedText").GetComponent<Text>();
-        //selectGauge = GameObject.Find("SelectGauge").GetComponent<RectTransform>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Titleシーン意外だとめっちゃエラー出ちゃうのでifで囲ってます
-        if (currentSpeedText != null && selectGauge != null)
+        if (currentSpeedText != null && selectber != null)
         {
+            currentSpeedText.text = "選択中のスピード" + railSpeed;
             Select();
         }
     }
@@ -43,29 +43,25 @@ public class CameraRayCast : MonoBehaviour
     private void Select()
     {
         Ray ray = new Ray(transform.position, transform.forward);
-        Debug
-            .DrawRay(ray.origin,
-            ray.direction,
-            new Color(1.0f, 0.0f, 0.0f, 1.0f));
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit))
         {
             currentButton = hit.collider.gameObject.name;
             timer += Time.deltaTime;
-            selectGauge.sizeDelta =
-                new Vector2(gaugeVec.x * timer / selectTime, gaugeVec.y);
+            selectber.fillAmount = timer / selectTime;
+
 
             if (timer > selectTime)
             {
                 switch (currentButton)
                 {
                     case "StartButton":
-                        selectGauge.sizeDelta = new Vector2(0, gaugeVec.y);
+                        selectber.fillAmount = 0;
                         Loanch();
                         break;
                     default:
-                        selectGauge.sizeDelta = new Vector2(0, gaugeVec.y);
+                        selectber.fillAmount = 0;
                         railSpeed = int.Parse(currentButton);
                         currentSpeedText.text =
                             "選択中のスピード" + currentButton;
@@ -76,15 +72,14 @@ public class CameraRayCast : MonoBehaviour
         else
         {
             timer = 0;
-            selectGauge.sizeDelta = new Vector2(0, gaugeVec.y);
+            //selectGauge.sizeDelta = new Vector2(0, gaugeVec.y);
+            selectber.fillAmount = timer / selectTime;
         }
     }
 
     void Loanch()
     {
         int num = SceneManager.sceneCountInBuildSettings;
-        Debug.Log(num + ":" + (SceneManager.GetActiveScene().buildIndex + 1) % num);
         SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % num);
-        //SceneManager.LoadScene("Snowman");
     }
 }

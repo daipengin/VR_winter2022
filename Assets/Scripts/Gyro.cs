@@ -49,7 +49,6 @@ public class Gyro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("triggerEnter");
         string obj_name = other.gameObject.name;
         if (obj_name == "Teleporter1")
         {

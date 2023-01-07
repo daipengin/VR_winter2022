@@ -284,7 +284,7 @@ FixedJoint:
   m_ConnectedMassScale: 1
 --- !u!95 &2807042306107253732
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -301,7 +301,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &2752652572209858618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +778,7 @@ FixedJoint:
   m_ConnectedMassScale: 1
 --- !u!95 &2806970297720947532
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -795,7 +795,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &2751953188942878244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2856058714359299618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f6b70cf8d6f4f94f931699457ea09a0, type: 3}
   m_Name: 
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2856316152483769598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 519f6ee6510174b44bbe9a8a2d3b6a6a, type: 3}
   m_Name: 
@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectTime: 0
   currentSpeedText: {fileID: 0}
-  selectGauge: {fileID: 0}
+  selectber: {fileID: 0}
 --- !u!114 &1128963032223927894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e549cbe3f14ab45d09d8849e208018e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_transform: {fileID: 0}
   cart: {fileID: 0}
   gyroText: {fileID: 0}
 --- !u!114 &8571715536016205974
@@ -1629,7 +1630,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2856316152483769598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bcc0425945ef4cbd9d99aed1de29671, type: 3}
   m_Name: 
